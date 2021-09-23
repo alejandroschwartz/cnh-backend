@@ -158,17 +158,3 @@ C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ref\ApiCNH.dll
 C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ApiCNH.pdb
 C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ApiCNH.genruntimeconfig.cache
 C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\bin\Debug\net5.0\ApiCNH.Views.dll
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\bin\Debug\net5.0\ApiCNH.Views.pdb
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ApiCNH.RazorAssemblyInfo.cache
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ApiCNH.RazorAssemblyInfo.cs
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ApiCNH.TagHelpers.input.cache
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ApiCNH.TagHelpers.output.cache
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ApiCNH.RazorCoreGenerate.cache
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\Razor\Views\Mediciones\Create.cshtml.g.cs
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\Razor\Views\Mediciones\Delete.cshtml.g.cs
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\Razor\Views\Mediciones\Details.cshtml.g.cs
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\Razor\Views\Mediciones\Edit.cshtml.g.cs
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\Razor\Views\Mediciones\Index.cshtml.g.cs
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ApiCNH.RazorTargetAssemblyInfo.cs
-C:\Users\Augusto D.j\Desktop\CNH\ApiCNH\ApiCNH\obj\Debug\net5.0\ApiCNH.Views.pdb

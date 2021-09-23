@@ -12,47 +12,51 @@ namespace ApiCNH.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MedicionesController : ControllerBase
+    public class PiezasController : ControllerBase
     {
         private readonly MedicionesContext _context;
 
-        public MedicionesController(MedicionesContext context)
+        public PiezasController(MedicionesContext context)
         {
             _context = context;
         }
 
-        // GET: api/Mediciones
+        // GET: api/Piezas
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Mediciones>>> GetMediciones()
+        public async Task<ActionResult<IEnumerable<Pieza>>> GetPiezas()
         {
-            return await _context.Mediciones.ToListAsync();
+            //return await _context.Piezas.ToListAsync();
+            return await _context.Piezas.Include(x => x.Mediciones).ToListAsync();
         }
 
-        // GET: api/Mediciones/5
+        // GET: api/Piezas/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Mediciones>> GetMediciones(long id)
+        public async Task<ActionResult<Pieza>> GetPieza(int id)
         {
-            var mediciones = await _context.Mediciones.FindAsync(id);
+            var pieza = await _context.Piezas
+                                .Include(x => x.Mediciones)
+                                .Where(x => x.PiezaId == id)
+                                .SingleOrDefaultAsync();
 
-            if (mediciones == null)
+            if (pieza == null)
             {
                 return NotFound();
             }
 
-            return mediciones;
+            return pieza;
         }
 
-        // PUT: api/Mediciones/5
+        // PUT: api/Piezas/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMediciones(long id, Mediciones mediciones)
+        public async Task<IActionResult> PutPieza(int id, Pieza pieza)
         {
-            if (id != mediciones.MedicionId)
+            if (id != pieza.PiezaId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(mediciones).State = EntityState.Modified;
+            _context.Entry(pieza).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +64,7 @@ namespace ApiCNH.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MedicionesExists(id))
+                if (!PiezaExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +77,36 @@ namespace ApiCNH.Controllers
             return NoContent();
         }
 
-        // POST: api/Mediciones
+        // POST: api/Piezas
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Mediciones>> PostMediciones(Mediciones mediciones)
+        public async Task<ActionResult<Pieza>> PostPieza(Pieza pieza)
         {
-            _context.Mediciones.Add(mediciones);
+            _context.Piezas.Add(pieza);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMediciones", new { id = mediciones.MedicionId }, mediciones);
+            return CreatedAtAction("GetPieza", new { id = pieza.PiezaId }, pieza);
         }
 
-        // DELETE: api/Mediciones/5
+        // DELETE: api/Piezas/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMediciones(long id)
+        public async Task<IActionResult> DeletePieza(int id)
         {
-            var mediciones = await _context.Mediciones.FindAsync(id);
-            if (mediciones == null)
+            var pieza = await _context.Piezas.FindAsync(id);
+            if (pieza == null)
             {
                 return NotFound();
             }
 
-            _context.Mediciones.Remove(mediciones);
+            _context.Piezas.Remove(pieza);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool MedicionesExists(long id)
+        private bool PiezaExists(int id)
         {
-            return _context.Mediciones.Any(e => e.MedicionId == id);
+            return _context.Piezas.Any(e => e.PiezaId == id);
         }
     }
 }

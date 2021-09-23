@@ -29,6 +29,13 @@ namespace ApiCNH
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddDbContext<MedicionesContext>(options => 
+            //    options.UseInMemoryDatabase("ListaMediciones")
+            //);
+            services.AddDbContext<MedicionesContext>(options =>
+                options.UseSqlServer(
+                    @"Server = DESKTOP-A04A2DU\SQLEXPRESS; Database = MedicionesDB; Trusted_Connection = True;")
+            );
             services.AddCors(options =>
             {
                 options.AddPolicy(name: MyCors, builder =>
@@ -39,7 +46,6 @@ namespace ApiCNH
                         .AllowAnyMethod();
                 });
             });
-            services.AddDbContext<MedicionesContext>(options => options.UseInMemoryDatabase("ListaMediciones"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

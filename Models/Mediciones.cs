@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ApiCNH.Models
@@ -9,26 +11,16 @@ namespace ApiCNH.Models
     public class Mediciones
     {
         [Key]
-        public long Id { get; set; }
-
-        public string Maquina { get; set; }
+        public long MedicionId { get; set; }
 
         public double Medicion { get; set; }
 
-        public string Descripcion { get; set; }
+        [Column(TypeName = "nvarchar(300)")]
+        public string MedicionDescripcion { get; set; }
 
 
-        public Mediciones()
-        {
-
-        }
-
-        public Mediciones(int id, string maquina, double medicion, string descripcion = "")
-        {
-            Id = id;
-            Maquina = maquina;
-            Medicion = medicion;
-            Descripcion = descripcion;
-        }
+        public int PiezaId { get; set; }
+        [JsonIgnore]
+        public Pieza Pieza { get; set; }
     }
 }
